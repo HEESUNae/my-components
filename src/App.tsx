@@ -7,6 +7,7 @@ import {Checkbox} from "./checkbox";
 import {Radio} from "./radio";
 import {Badge} from "./badge";
 import {Textarea} from "./textarea";
+import {Accordion} from "./accordion";
 
 function App() {
     const options = ['안녕', '반가워', '오늘은목요일']; // 셀렉트 리스트
@@ -16,6 +17,20 @@ function App() {
     const onChange = (e:any) => {
         console.log('change@@', e.target.value)
     }
+    const options1 = [
+        {
+            menu: '메뉴1',
+            content: '내용1'
+        },
+        {
+            menu: '메뉴2',
+            content: '내용2'
+        },
+        {
+            menu: '메뉴3',
+            content: '내용3'
+        }
+    ]
     return (
     <div className="App">
       {/*<Select options={options} selectedOpt={options[1]} />*/}
@@ -26,6 +41,7 @@ function App() {
       {/*<Radio name='1' options={options}/>*/}
       {/*<Badge variant={'outline'}>뱃지</Badge>*/}
       {/*<Textarea placeholder={'내용을 입력해주세요'} maxLength={20}/>*/}
+        <Accordion options={options1}/>
     </div>
   );
 }

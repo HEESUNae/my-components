@@ -1,0 +1,26 @@
+.hs-accordion-container .hs-accordion-menu {
+    padding: 0;
+    width: 100px;
+}
+.hs-accordion-container li {
+    list-style: none;
+}
+.hs-accordion-container .hs-accordion-menu {
+    border: 1px solid #666666;
+    padding: 8px;
+    background: #dddddd;
+    cursor: pointer;
+}
+.hs-accordion-container .hs-accordion-content {
+    background: #eee;
+    min-height: 0;
+    height: 0;
+    visibility: hidden;
+    box-sizing: border-box;
+    transition: min-height 0.3s, height 0.3s;
+}
+.hs-accordion-container .hs-accordion-content.open {
+    padding: 8px;
+    min-height: 100px;
+    visibility: visible;
+}
