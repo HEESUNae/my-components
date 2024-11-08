@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import {SelectProps} from './type'
 import './style.css'
 
 // 셀렉트 화살표 아이콘 컴포넌트
@@ -11,31 +12,31 @@ function ArrowIcon(){
     )
 }
 
-
-interface SelectProps {
-    // options: any;
-}
-
-export function Select({}: SelectProps) {
-    const options = ['안녕', '반가워', '오늘은목요일']; // 셀렉트 리스트
-    const [selectedOption, setSelectedOption] = useState(options[0]); // 선택된 옵션
+/**
+ * 기본 셀렉트 컴포넌트
+ * @param options 셀렉트 옵션 배열
+ * @param selectedOpt 디폴트 옵션값
+ * @constructor
+ */
+export function Select({options, selectedOpt = options[0]}: SelectProps) {
+    const [selectedOption, setSelectedOption] = useState(selectedOpt); // 선택된 옵션
     const [isOptVisible, setIsOptVisible] = useState(false); // 옵션 여부
     const selectRef= useRef<HTMLDivElement>(null);
 
-    // 셀렉트를 열고 닫을 수 있습니다.
-    const handleSelect = () => {
+    // 셀렉트를 열고 닫음
+    const handleOpenSelect = () => {
         setIsOptVisible(prev => !prev)
     }
 
-    // 옵션을 선택한 값으로 업데이트 합니다.
-    const handleSelected = (opt:string) => {
+    // 선택된 옵션 값으로 업데이트
+    const handleSelectedValue = (opt:string) => {
         setSelectedOption(opt)
         setIsOptVisible(false)
     }
 
-    // 화면을 클릭하면 옵션이 열려있는 경우 닫힙니다.
-    const handleCloseSelect = (e:any) => {
-        if(!selectRef.current?.contains(e.target)){
+    // 셀렉트가 아닌 곳을 클릭하면 셀렉트 옵션이 열려있는 경우 닫힘
+    const handleCloseSelect: EventListener = (e) => {
+        if(!selectRef.current?.contains(e.target as Node)){
             setIsOptVisible(false)
         }
     }
@@ -48,15 +49,15 @@ export function Select({}: SelectProps) {
 
     return (
         <div className={'hs-select-container'} ref={selectRef}>
-            <div className={'hs-select-selected'} onClick={handleSelect}>
+            <div className={'hs-select-selected'} onClick={handleOpenSelect}>
                 <p>{selectedOption}</p>
-                <div className={`hs-arrow-icon ${!isOptVisible && "down"}`}>
+                <div className={`hs-arrow-icon ${!isOptVisible && "rotate"}`}>
                     <ArrowIcon/>
                 </div>
             </div>
-            <ul className={`hs-select-options ${!isOptVisible && "hidden"}`}>
+            <ul className={`hs-select-options ${!isOptVisible && "open"}`}>
                 {options.map((option: string) => (
-                    <li key={option} onClick={()=>handleSelected(option)} className={`${selectedOption === option && 'selected'}`}>
+                    <li key={option} onClick={()=>handleSelectedValue(option)} className={`${selectedOption === option && 'selected'}`}>
                         {option}
                     </li>
                 ))}

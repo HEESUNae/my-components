@@ -20,7 +20,7 @@
     display: flex;
     transition: 0.3s;
 }
-.hs-select-container .hs-select-selected .hs-arrow-icon.down {
+.hs-select-container .hs-select-selected .hs-arrow-icon.rotate {
     transform: rotate(0deg);
 }
 .hs-select-container .hs-select-options {
@@ -39,11 +39,10 @@
     overflow-y: auto;
     transition: height 0.2s ease-in-out;
 }
-.hs-select-container .hs-select-options.hidden {
+.hs-select-container .hs-select-options.open {
     height: 0;
     visibility: hidden;
 }
-
 .hs-select-container .hs-select-options::-webkit-scrollbar {
     width: 0;
 }
