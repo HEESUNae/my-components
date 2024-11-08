@@ -1,0 +1,16 @@
+.hs-textarea-container {
+    position: relative;;
+}
+.hs-textarea-container textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: none;
+    padding: 8px;
+}
+.hs-textarea-container .text-leng-count {
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    bottom: 8px;
+    right: 0px;
+}
