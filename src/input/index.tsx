@@ -28,14 +28,14 @@ export function Input({placeholder, onChange, defaultValue, regex, errorMsg, ...
     const [isRegexError, setIsRegexError] = useState<boolean>(false);
 
     // props 로 전달받은 정규식을 체크하고 onChange 함수를 실행
-    const handleCheckRegex = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const handleRegexCheck = (e:React.ChangeEvent<HTMLInputElement>) => {
         regex && setIsRegexError(!regex?.test(e.target.value));
         onChange && onChange(e);
     }
 
     return (
         <div className={'hs-input-container'}>
-            <input type="text" placeholder={placeholder} onChange={handleCheckRegex} defaultValue={defaultValue} {...rest} />
+            <input type="text" placeholder={placeholder} onChange={handleRegexCheck} defaultValue={defaultValue} {...rest} />
             {isRegexError && <p className={'error-msg'}>{errorMsg ?? "올바른 형식이 아닙니다."}</p>}
         </div>
     )

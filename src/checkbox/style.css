@@ -1,15 +1,18 @@
-input[type="checkbox"] {
+.hs-checkbox-container input[type="checkbox"] {
     display: none;
 }
-input[type="checkbox"] + label {
+.hs-checkbox-container input[type="checkbox"] + label {
     display: flex;
     align-items: center;
     gap: 8px;
     cursor: pointer;
 }
-input[type="checkbox"] + label p {
+.hs-checkbox-container input[type="checkbox"] + label p {
     margin: 0;
 }
-input[type="checkbox"] + label .disabled {
+.hs-checkbox-container input[type="checkbox"] + .disabled {
     color: #666;
+}
+.hs-checkbox-container input[type="checkbox"] + .disabled svg {
+    fill:#888;
 }

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import './style.css'
+import './style.css';
 
 export interface SelectProps {
     options: any;
@@ -58,8 +58,8 @@ export function Select({options, selectedOpt = options[0]}: SelectProps) {
                 ))}
             </ul>
         </div>
-    );
-};
+    )
+}
 
 
 // 셀렉트 화살표 아이콘 컴포넌트

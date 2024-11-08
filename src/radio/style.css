@@ -1,0 +1,18 @@
+.hs-radio-container {
+    display: flex;
+    gap: 8px;
+}
+.hs-radio-container input[type="radio"] {
+    display: none;
+}
+.hs-radio-container input[type="radio"] + label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.hs-radio-container .disabled {
+    color: #666;
+}
+.hs-radio-container .disabled svg {
+    fill: #888;
+}
