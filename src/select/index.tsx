@@ -1,23 +1,18 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {SelectProps} from './type'
 import './style.css'
 
-// 셀렉트 화살표 아이콘 컴포넌트
-function ArrowIcon(){
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ccc">
-            <path
-                d="M459-381 314-526q-3-3-4.5-6.5T308-540q0-8 5.5-14t14.5-6h304q9 0 14.5 6t5.5 14q0 2-6 14L501-381q-5 5-10 7t-11 2q-6 0-11-2t-10-7Z"/>
-        </svg>
-    )
+export interface SelectProps {
+    options: any;
+    selectedOpt?: any;
 }
 
 /**
  * 기본 셀렉트 컴포넌트
  * @param options 셀렉트 옵션 배열
- * @param selectedOpt 디폴트 옵션값
+ * @param selectedOpt 디폴트로 설정될 옵션값
  * @constructor
  */
+
 export function Select({options, selectedOpt = options[0]}: SelectProps) {
     const [selectedOption, setSelectedOption] = useState(selectedOpt); // 선택된 옵션
     const [isOptVisible, setIsOptVisible] = useState(false); // 옵션 여부
@@ -34,7 +29,7 @@ export function Select({options, selectedOpt = options[0]}: SelectProps) {
         setIsOptVisible(false)
     }
 
-    // 셀렉트가 아닌 곳을 클릭하면 셀렉트 옵션이 열려있는 경우 닫힘
+    // 셀렉트가 아닌 곳을 클릭하면 셀렉트 옵션이 열려있는 경우 닫음
     const handleCloseSelect: EventListener = (e) => {
         if(!selectRef.current?.contains(e.target as Node)){
             setIsOptVisible(false)
@@ -65,3 +60,14 @@ export function Select({options, selectedOpt = options[0]}: SelectProps) {
         </div>
     );
 };
+
+
+// 셀렉트 화살표 아이콘 컴포넌트
+function ArrowIcon(){
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ccc">
+            <path
+                d="M459-381 314-526q-3-3-4.5-6.5T308-540q0-8 5.5-14t14.5-6h304q9 0 14.5 6t5.5 14q0 2-6 14L501-381q-5 5-10 7t-11 2q-6 0-11-2t-10-7Z"/>
+        </svg>
+    )
+}
