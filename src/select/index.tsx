@@ -15,8 +15,8 @@ export interface SelectProps {
 
 export function Select({options, selectedOpt = options[0]}: SelectProps) {
     const [selectedOption, setSelectedOption] = useState(selectedOpt); // 선택된 옵션
-    const [isOptVisible, setIsOptVisible] = useState(false); // 옵션 여부
-    const selectRef= useRef<HTMLDivElement>(null);
+    const [isOptVisible, setIsOptVisible] = useState<boolean>(false); // 옵션 여부
+    const selectRef= useRef<HTMLDivElement | null>(null);
 
     // 셀렉트를 열고 닫음
     const handleOpenSelect = () => {

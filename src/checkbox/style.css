@@ -1,0 +1,12 @@
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+input[type="checkbox"] + label p {
+    margin: 0;
+}

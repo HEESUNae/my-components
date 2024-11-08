@@ -25,7 +25,7 @@ interface InputProps {
  */
 
 export function Input({placeholder, onChange, defaultValue, regex, errorMsg, ...rest}: InputProps) {
-    const [isRegexError, setIsRegexError] = useState(false);
+    const [isRegexError, setIsRegexError] = useState<boolean>(false);
 
     // props 로 전달받은 정규식을 체크하고 onChange 함수를 실행
     const handleCheckRegex = (e:React.ChangeEvent<HTMLInputElement>) => {
