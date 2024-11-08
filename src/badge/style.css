@@ -1,0 +1,11 @@
+.hs-badge-container {
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+.hs-badge-container.fill {
+    background: red;
+}
+.hs-badge-container.outline {
+    color: red;
+    border: 1px solid;
+}
