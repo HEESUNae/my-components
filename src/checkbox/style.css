@@ -10,3 +10,6 @@ input[type="checkbox"] + label {
 input[type="checkbox"] + label p {
     margin: 0;
 }
+input[type="checkbox"] + label .disabled {
+    color: #666;
+}
