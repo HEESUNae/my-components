@@ -24,8 +24,8 @@ export function Select({options, selectedOpt = options[0]}: SelectProps) {
     }
 
     // 선택된 옵션 값으로 업데이트
-    const handleSelectedValue = (opt:string) => {
-        setSelectedOption(opt)
+    const handleSelectedValue = (option:string) => {
+        setSelectedOption(option)
         setIsOptVisible(false)
     }
 

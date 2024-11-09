@@ -1,26 +1,41 @@
-.hs-accordion-container .hs-accordion-menu {
-    padding: 0;
-    width: 100px;
-}
-.hs-accordion-container li {
+* {
+    margin:0;
+    padding:0;
     list-style: none;
 }
-.hs-accordion-container .hs-accordion-menu {
+.hs-accordion .hs-accordion-menu {
     border: 1px solid #666666;
     padding: 8px;
-    background: #dddddd;
+    background: #000;
+    color: #fff;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
 }
-.hs-accordion-container .hs-accordion-content {
+.hs-accordion .hs-accordion-detail {
     background: #eee;
     min-height: 0;
     height: 0;
     visibility: hidden;
     box-sizing: border-box;
-    transition: min-height 0.3s, height 0.3s;
+    overflow: hidden;
+    transition: min-height 0.3s, visibility 0.3s;
 }
-.hs-accordion-container .hs-accordion-content.open {
+.hs-accordion .hs-accordion-detail > div {
     padding: 8px;
+}
+.hs-accordion .hs-accordion-icon {
+    display: flex;
+    transition: transform 0.3s;
+}
+
+/*open*/
+.hs-accordion.open .hs-accordion-detail {
     min-height: 100px;
     visibility: visible;
+}
+.hs-accordion.open .hs-accordion-icon {
+    transform: rotate(-180deg);
 }

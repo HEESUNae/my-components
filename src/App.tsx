@@ -41,7 +41,7 @@ function App() {
       {/*<Radio name='1' options={options}/>*/}
       {/*<Badge variant={'outline'}>뱃지</Badge>*/}
       {/*<Textarea placeholder={'내용을 입력해주세요'} maxLength={20}/>*/}
-        <Accordion options={options1}/>
+      {/*<Accordion options={options1} openTabs={[0,2]}/>*/}
     </div>
   );
 }
