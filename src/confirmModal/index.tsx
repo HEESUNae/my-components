@@ -9,6 +9,16 @@ interface ModalProps {
     children: React.ReactNode;
 }
 
+/**
+ * Confirm 모달 컴포넌트
+ * @param title 모달 헤더 내용
+ * @param content 모달 컨텐츠 내용
+ * @param open 모달 오픈 여부
+ * @param className CSS Style ClassName
+ * @param children 모달을 온오프 시킬 수 있는 버튼
+ * @constructor
+ */
+
 export function ConfirmModal({title, content, open=false, className, children}: ModalProps) {
     const [isVisible, setIsVisible] = useState<boolean>(open); // 모달 오픈 여부
     const modalBox = useRef<null | HTMLDivElement>(null);
