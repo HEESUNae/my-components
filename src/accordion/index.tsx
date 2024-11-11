@@ -6,16 +6,18 @@ type AccordionOptionType = {menu: string; content: string}
 interface AccordionProps {
     options: AccordionOptionType[];
     openTabs?: number[];
+    className?: string;
 }
 
 /**
  * 기본 아코디언 컴포넌트
  * @param options 메뉴와 컨텐츠 배열
  * @param openTabs 디폴트로 열어놓을 idx 배열
+ * @param className CSS Style ClassName
  * @constructor
  */
 
-export function Accordion({options, openTabs}:AccordionProps){
+export function Accordion({options, openTabs, className}:AccordionProps){
     const [selectedTabs, setSelectedTabs] = useState<number[]>(openTabs ? [...openTabs!] : []); // 활성화 된 아코디언 배열
 
     // 선택된 아코디언의 활성화 여부를 반환
@@ -30,7 +32,7 @@ export function Accordion({options, openTabs}:AccordionProps){
     }
 
     return (
-        <div className={`hs-accordion-container`}>
+        <div className={`hs-accordion-container ${className}`}>
             <ul>
                 {options.map((option:AccordionOptionType, optionIdx:number) => (
                     <li key={option.menu} className={`hs-accordion ${confirmIsSelected(optionIdx) && "open"}`}>

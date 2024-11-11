@@ -3,6 +3,9 @@
     padding:0;
     list-style: none;
 }
+.hs-accordion {
+    width: 200px;
+}
 .hs-accordion .hs-accordion-menu {
     border: 1px solid #666666;
     padding: 8px;
@@ -12,7 +15,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
 }
 .hs-accordion .hs-accordion-detail {
     background: #eee;
@@ -37,5 +39,5 @@
     visibility: visible;
 }
 .hs-accordion.open .hs-accordion-icon {
-    transform: rotate(-180deg);
+    transform: rotate(180deg);
 }

@@ -1,0 +1,49 @@
+.hs-modal-container {
+    position: fixed;
+    top:0;
+    left: 0;
+    transition: opacity 0.3s;
+}
+.hs-modal-container.open {
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+.hs-modal-container.close {
+    width: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+.hs-modal-container .hs-modal-backdrop {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+.hs-modal-container .hs-modal-box {
+    background: #ffffff;
+    width: 400px;
+    position: absolute;
+}
+.hs-modal-container .hs-modal-box .hs-modal-header {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+.hs-modal-container .hs-modal-box .hs-modal-content {
+    padding: 16px;
+}
+.hs-modal-container .hs-modal-box .hs-modal-close-btn {
+    margin-left: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: #eee;
+}
+.hs-modal-container .hs-modal-box .hs-modal-close-btn svg {
+    pointer-events: none;
+}

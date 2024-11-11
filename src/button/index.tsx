@@ -3,7 +3,7 @@ import './style.css'
 
 interface ButtonProps {
    type?: 'button' | 'submit';
-   variant?: string;
+   className?: string;
    children: React.ReactNode;
    onClick?: ()=> void;
    disabled?: boolean;
@@ -19,8 +19,8 @@ interface ButtonProps {
  * @constructor
  */
 
-export function Button({type="button", variant="fill", onClick, children, ...rest}:ButtonProps){
+export function Button({type="button", className, onClick, children, ...rest}:ButtonProps){
    return (
-       <button type={type} className={`hs-button-${variant}`} onClick={onClick} {...rest}>{children}</button>
+       <button type={type} className={className} onClick={onClick} {...rest}>{children}</button>
    )
 }

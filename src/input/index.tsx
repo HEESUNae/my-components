@@ -10,6 +10,7 @@ interface InputProps {
     regex?: RegExp;
     errorMsg?: string;
     maxLength?: number;
+    className?: string;
 }
 
 /**
@@ -20,11 +21,12 @@ interface InputProps {
  * @param regex 체크하고자 하는 정규식
  * @param errorMsg 정규식 에러 문구
  * @param maxLength 입력가능한 value 의 자리수
+ * @param className CSS Style 지정할 className
  * @param rest 그 외의 옵션들
  * @constructor
  */
 
-export function Input({placeholder, onChange, defaultValue, regex, errorMsg, ...rest}: InputProps) {
+export function Input({placeholder, onChange, defaultValue, regex, errorMsg, className, ...rest}: InputProps) {
     const [isRegexError, setIsRegexError] = useState<boolean>(false);
 
     // props 로 전달받은 정규식을 체크하고 onChange 함수를 실행
@@ -35,7 +37,7 @@ export function Input({placeholder, onChange, defaultValue, regex, errorMsg, ...
 
     return (
         <div className={'hs-input-container'}>
-            <input type="text" placeholder={placeholder} onChange={handleRegexCheck} defaultValue={defaultValue} {...rest} />
+            <input type="text" placeholder={placeholder} onChange={handleRegexCheck} defaultValue={defaultValue} className={className} {...rest} />
             {isRegexError && <p className={'error-msg'}>{errorMsg ?? "올바른 형식이 아닙니다."}</p>}
         </div>
     )

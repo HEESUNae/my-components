@@ -1,5 +1,10 @@
 .App {
-  display: flex;
+  display: grid;
+  gap: 16px;
   align-content: center;
-  justify-content: center;
+  justify-content: start;
+  padding: 20px;
+}
+h2 {
+  margin-bottom: 16px;
 }

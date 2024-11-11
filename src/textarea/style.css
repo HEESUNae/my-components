@@ -6,11 +6,12 @@
     min-height: 100px;
     resize: none;
     padding: 8px;
+    box-sizing: border-box;
 }
 .hs-textarea-container .text-leng-count {
     font-size: 12px;
     color: #666;
     position: absolute;
-    bottom: 8px;
-    right: 0px;
+    bottom: 16px;
+    right: 16px;
 }

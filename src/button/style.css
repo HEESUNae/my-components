@@ -1,13 +1,10 @@
 button {
     border: 0;
     cursor: pointer;
+    width: fit-content;
 }
-.hs-button-fill {
-    background: red;
+.btn-fill {
+    background: #000000;
     color: #fff;
-}
-.hs-button-outline {
-    color: red;
-    border: 1px solid;
-    background: transparent;
+    padding: 8px;
 }
