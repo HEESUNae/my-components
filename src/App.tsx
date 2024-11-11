@@ -9,6 +9,7 @@ import {Badge} from "./badge";
 import {Textarea} from "./textarea";
 import {Accordion} from "./accordion";
 import {ConfirmModal} from "./confirmModal";
+import {ToastModal} from "./toastModal";
 
 function App() {
     const options = ['안녕', '반가워', '오늘은목요일']; // 셀렉트 리스트
@@ -75,6 +76,15 @@ function App() {
                     <Button className={`btn-fill`}>모달을 열어주세요</Button>
                 </ConfirmModal>
             </div>
+
+            <div>
+                <h2>ToastModal</h2>
+                <ToastModal content={'모달 내용'} className={`basic-modal`}>
+                    <Button className={`btn-fill`}>토스트 모달을 열어주세요</Button>
+                </ToastModal>
+            </div>
+
+
         </div>
     )
 }

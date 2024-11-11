@@ -1,0 +1,27 @@
+.hs-toast-modal-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: opacity 0.3s;
+}
+.hs-toast-modal-container.open {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
+.hs-toast-modal-container.close {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
+.hs-toast-modal-container .basic-modal {
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    font-weight: 600;
+    margin: 20px;
+    padding: 8px;
+}
