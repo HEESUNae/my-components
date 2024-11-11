@@ -18,12 +18,16 @@ export function ConfirmModal({title, content, open=false, className, children}: 
         setIsVisible(prev => !prev);
     }
 
+    // 모달이 항상 가운데에 위치하기 위한 CSS Style
+    const modalHeightStyle = `calc(50% - ${modalBox.current?.clientHeight! / 2}px`;
+    const modalWidthStyle = `calc(50% - ${modalBox.current?.clientWidth! / 2}px`;
+
     return (
         <>
             <div className={`hs-modal-trigger`} onClick={handleModalOpen}>{children}</div>
             <div className={`hs-modal-container ${isVisible ? 'open' : 'close'} ${className}`}>
                 <div className={`hs-modal-backdrop`} onClick={handleModalOpen}></div>
-                <div className={`hs-modal-box`} ref={modalBox} style={{top: `calc(50% - ${modalBox.current?.clientHeight}px)`, left: `calc(50% - ${modalBox.current?.clientWidth}px)`}}>
+                <div className={`hs-modal-box`} ref={modalBox} style={{top: modalHeightStyle, left: modalWidthStyle}}>
                     {title &&
                         <div className={`hs-modal-header`}>
                             <p>{title}</p>
